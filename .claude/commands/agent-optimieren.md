@@ -5,9 +5,10 @@ argument-hint: "<agent-name> [bekannte Probleme] | alle"
 
 Optimiere den Agenten **$ARGUMENTS** im Dialog mit dem Subagenten `agenten-pruefer`.
 Du bist der Vermittler: Der Prüfer stellt die Aufgaben, der Agent beantwortet sie
-wirklich, der Prüfer bewertet und verbessert. Führe die Schritte selbst aus und
-frag nicht zwischendurch nach, außer der Prüfer meldet etwas als OFFEN, das ohne
-meine Entscheidung nicht lösbar ist.
+wirklich, der Prüfer bewertet und verbessert. Führe alle Schritte selbstständig aus, ohne mich
+zwischendurch zu fragen. Meldet der Prüfer etwas als OFFEN, sammle diese Fragen und
+stell sie mir erst am Ende gesammelt. Meine Antworten trägst du in
+`.claude/agenten-ziele.md` ein und lässt danach eine weitere Runde laufen.
 
 Bei "alle" oder ohne Namen: Mach das für jeden Agenten in `.claude/agents/` außer
 `agenten-pruefer`, einen nach dem anderen, und lass danach den Prüfer einmal das
@@ -52,8 +53,7 @@ aktuelle Fassung, auch wenn sie in dieser Sitzung geändert wurde.)
    mit allen Testfällen. Stopp, sobald alle Tests bestanden sind und die Note
    mindestens 9/10 ist, oder nach 3 Runden.
 
-## Abschlussbericht an mich (kurz, auf Deutsch)
-- Agent, Note und bestandene Tests vor der ersten und nach der letzten Runde
-- die wichtigsten Probleme und was geändert wurde
-- Pfad der Sicherung des Originals
-- was offen ist und meine Entscheidung braucht
+## Abschluss
+Committe und pushe die Änderungen. Dann gib mir pro Agent genau eine Zeile:
+Name · Note vorher → nachher · Tests bestanden · wichtigste Änderung.
+Danach höchstens die gesammelten Fragen an mich.

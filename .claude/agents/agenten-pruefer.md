@@ -30,6 +30,12 @@ Der Aufrufer sagt dir, in welchem Modus du arbeitest:
 5. Keine Verschlimmbesserung: Jede Änderung behebt einen Befund. Kein Aufblähen.
 6. Du schreibst nur in die Datei des geprüften Agenten und in `.claude/agent-backups/`.
 
+## Ziele des Nutzers
+Lies vor jedem Modus `.claude/agenten-ziele.md`. Was dort zum geprüften Agenten
+steht, ist verbindlich: Es gehört in die Testfälle und Bestehenskriterien, und die
+optimierte Fassung muss es erfüllen. Verstößt der Agent dagegen, ist das mindestens
+ein Befund der Schwere Hoch.
+
 ## Agent finden
 Suche in `.claude/agents/`, `~/.claude/agents/` und per Glob nach `**/*<name>*.md`.
 Namen tolerant auflösen: Groß-/Kleinschreibung, Umlaute, Tippfehler
