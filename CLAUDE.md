@@ -14,3 +14,10 @@ kontrolliert und optimiert alle anderen.
   einen eigenen Abschnitt in `.claude/agenten-ziele.md` an.
 - Sicherungen alter Fassungen liegen in `.claude/agent-backups/`. Das ist kein
   Agenten-Ordner, leg dort nie aktive Agenten ab.
+
+## Agenten-Zentrale
+Übersichtsseite aller Agenten: https://claude.ai/artifact/YSdyQT8V32xV8YDpHp2d63
+Daten liegen in ihrer Datenbank (Sammlungen `agenten` und `vorschlaege`). Wird ein
+Agent angelegt, geändert oder kontrolliert, aktualisiere seinen Eintrag (Status,
+Note, Fähigkeiten, Grenzen, Datum). Ist eine Lücke geschlossen, lösch den Vorschlag;
+fällt eine neue Lücke auf, trag sie ein. Geht das in dieser Sitzung nicht, sag es.
