@@ -12,6 +12,8 @@ kontrolliert und optimiert alle anderen.
   danach automatisch, ohne dass der Nutzer es sagen muss.
 - Fragt der Nutzer nach Zielen für einen neuen Agenten oder nennt er sie, leg dafür
   einen eigenen Abschnitt in `.claude/agenten-ziele.md` an.
+- Nach jeder Änderung an Agenten, Zielen oder Regeln: committen und auf den
+  aktuellen Branch pushen, damit der tägliche Abgleich in der Cloud sie sieht.
 - Sicherungen alter Fassungen liegen in `.claude/agent-backups/`. Das ist kein
   Agenten-Ordner, leg dort nie aktive Agenten ab.
 
