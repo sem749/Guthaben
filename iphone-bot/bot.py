@@ -235,6 +235,20 @@ def befehl_neu(args):
     print(f"Angelegt: {ordner}\nJetzt Knopf-Bilder in die Unterordner legen (siehe ANLEITUNG.md).")
 
 
+def merke_bundle_id(spiel, aktiv):
+    """Ohne eingetragene ID: die gerade offene App als Spiel übernehmen und speichern."""
+    if not aktiv or aktiv.startswith("com.apple.") or "WebDriverAgent" in aktiv:
+        log(f"{spiel.name}: keine bundle_id bekannt – Neustart/Zurückholen aus. "
+            "Tipp: Spiel am iPhone öffnen und den Bot erneut starten.")
+        return
+    spiel.cfg["bundle_id"] = aktiv
+    datei = spiel.ordner / "spiel.json"
+    daten = json.loads(datei.read_text(encoding="utf-8")) if datei.exists() else {}
+    daten["bundle_id"] = aktiv
+    datei.write_text(json.dumps(daten, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    log(f"{spiel.name}: offene App {aktiv} als Spiel gemerkt (steht jetzt in spiel.json)")
+
+
 def befehl_bild(args, wda):
     ordner = SPIELE / args.spiel / "bilder"
     ordner.mkdir(parents=True, exist_ok=True)
@@ -301,6 +315,8 @@ def main():
     elif args.befehl == "start":
         spiele = [Spiel(name) for name in args.spiele]
         for spiel in spiele:
+            if not spiel.bundle_id:
+                merke_bundle_id(spiel, wda.aktive_app())
             if not spiel.vorlagen["video"] or not spiel.vorlagen["schliessen"]:
                 raise SystemExit(f"{spiel.name}: in 'video' und 'schliessen' muss je mindestens ein Bild liegen.")
         bot = Bot(wda)

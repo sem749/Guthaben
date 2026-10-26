@@ -1,0 +1,7 @@
+{
+  "bundle_id": "",
+  "werbung_max_sek": 90,
+  "max_runden_ohne_video": 15,
+  "max_neustarts": 2,
+  "start_wartezeit_sek": 30
+}

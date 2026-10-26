@@ -1,0 +1,16 @@
+Dice Dreams einrichten
+
+1. Dice Dreams am iPhone öffnen und einmal "python bot.py start dicedreams" ausführen.
+   Der Bot merkt sich dann die App-ID automatisch (bundle_id in spiel.json).
+2. Knopf-Bilder sammeln mit "python bot.py bild dicedreams":
+   - video/       der Knopf, mit dem man ein Video für Würfe/Belohnungen startet
+   - schliessen/  die X-Knöpfe der Werbungen + "Einsammeln"/"Collect" danach
+   - weg/         (optional) Knöpfe, die zum Video-Angebot führen
+   - leer/        (optional) Anzeige, dass gerade keine Videos verfügbar sind
+3. "python bot.py test dicedreams" zeigt, ob alles erkannt wird.
+
+Dice Dreams gibt nur eine begrenzte Zahl Videos, die sich nach ein paar Stunden
+wieder auffüllen. Darum am besten so starten:
+   python bot.py start dicedreams --pause 60
+Dann schaut er alles leer, wartet 60 Minuten und macht von selbst weiter.
+Der Neustart hilft, wenn der Video-Knopf nach einem Video einfach verschwindet.
